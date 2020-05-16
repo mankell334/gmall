@@ -3,12 +3,12 @@ package org.mankell.gmall.admin.ums.vo;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.validator.constraints.Email;
-import org.hibernate.validator.constraints.NotEmpty;
+
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
 
 /**
  * 用户登录参数
- * Created by atguigu 4/26.
  */
 @Getter
 @Setter
