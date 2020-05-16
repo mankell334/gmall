@@ -3,9 +3,10 @@ package org.mankell.gmall.admin.pms.controller;
 import com.alibaba.dubbo.config.annotation.Reference;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import org.mankell.gmall.vo.product.PmsProductCategoryParam;
 import org.mankell.gmall.pms.service.ProductCategoryService;
 import org.mankell.gmall.to.CommonResult;
+import org.mankell.gmall.vo.product.PmsProductCategoryParam;
+import org.mankell.gmall.vo.product.PmsProductCategoryWithChildrenItem;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -81,7 +82,8 @@ public class PmsProductCategoryController {
     @ApiOperation("查询所有一级分类及子分类[有难度]")
     @GetMapping(value = "/list/withChildren")
     public Object listWithChildren() {
-        //TODO 查询所有一级分类及子分类
-        return new CommonResult().success(null);
+        List<PmsProductCategoryWithChildrenItem> productCategoryWithChildrenItems =
+                productCategoryService.getListWithChildren(0);
+        return new CommonResult().success(productCategoryWithChildrenItems);
     }
 }
