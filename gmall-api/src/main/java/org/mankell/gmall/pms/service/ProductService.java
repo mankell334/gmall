@@ -1,7 +1,9 @@
 package org.mankell.gmall.pms.service;
 
-import org.mankell.gmall.pms.entity.Product;
 import com.baomidou.mybatisplus.extension.service.IService;
+import org.mankell.gmall.pms.entity.Product;
+import org.mankell.gmall.vo.PageInfoVO;
+import org.mankell.gmall.vo.product.PmsProductQueryParam;
 
 /**
  * <p>
@@ -13,4 +15,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface ProductService extends IService<Product> {
 
+    PageInfoVO getPageInfo(PmsProductQueryParam productQueryParam);
 }
