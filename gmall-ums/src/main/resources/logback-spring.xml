@@ -26,9 +26,9 @@
     <!--<root level="INFO">-->
     <root>
         <level value="INFO"/>
-
         <appender-ref ref="CONSOLE"/>
         <appender-ref ref="FILE"/>
         <appender-ref ref="LOGSTASH"/>
     </root>
+    <logger name="org.mankell.gmall" level="DEBUG"/>
 </configuration>
